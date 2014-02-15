@@ -108,7 +108,7 @@ body{
 #footer{
 	width:100%;
 	position: absolute;
-	line-height: 0.5em;
+	line-height: 1em;
 	margin-top: 4em;
 	bottom:0;
 	text-align: center;
@@ -158,10 +158,8 @@ $(window).on('resize',resize = function(){
 	//position the bio under the gallery if there is room e.g. phones
 	if($(window).height()<430){
 		$('#footer').hide();
-		$('#bio').hide();
 	} else {
 		$('#footer').show();
-		$('#bio').show();
 	}
 	if($(window).width()<550){
 
@@ -174,8 +172,7 @@ $(window).on('resize',resize = function(){
 	}
 	if($(window).width()<550 || $(window).height() < 430){
 		$('#heading').css({
-			fontSize:'1.5em',
-			position: ($(window).height() > 430) && 'relative' || 'absolute' 
+			fontSize:'1.5em', 
 		});
 		$('#sidebar').addClass('top-horizontal').removeClass('top-vertical');
 	} else {
