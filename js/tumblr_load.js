@@ -31,11 +31,19 @@ function log_me(data){
         });
         
     });
-    // Initialize the Gallery as image carousel:
-    gallery = blueimp.Gallery(carouselLinks, {
-        container: '#blueimp-image-carousel',
-        carousel: true
-    });
+    addToGallery(carouselLinks);
+}
+
+function addToGallery(carouselLinks){
+
+    if(window.gallery){
+        gallery.add(carouselLinks);
+    } else {
+        gallery = blueimp.Gallery(carouselLinks, {
+            container: '#blueimp-image-carousel',
+            carousel: true
+        });
+    }
 }
 
 
@@ -44,10 +52,13 @@ $(function () {
     'use strict';
      
     jQuery.ajax({
-        url: "http://api.tumblr.com/v2/blog/zoeappleseed.tumblr.com/posts/photo?tag=seed&api_key=msIByDvkVk3gSr360nq2vmTkKIAvW4gNTB2dUYkvIO9NLwyxNy&jsonp=log_me", 
-        dataType: "jsonp"
+        url: 'http://api.tumblr.com/v2/blog/zoeappleseed.tumblr.com/posts/photo?tag=seed&offset=0&api_key=msIByDvkVk3gSr360nq2vmTkKIAvW4gNTB2dUYkvIO9NLwyxNy&jsonp=log_me', 
+        dataType: 'jsonp'
     });
-
+    jQuery.ajax({
+        url: 'http://api.tumblr.com/v2/blog/zoeappleseed.tumblr.com/posts/photo?tag=seed&offset=20&api_key=msIByDvkVk3gSr360nq2vmTkKIAvW4gNTB2dUYkvIO9NLwyxNy&jsonp=log_me', 
+        dataType: 'jsonp'
+    });
 
         
 
