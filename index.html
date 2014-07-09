@@ -74,7 +74,7 @@ body{
 }
 .right{
 	position: absolute;
-	top:6.5em;
+	top:5.75em;
 	right:1%;
 	width:20%;
 	color:black;
@@ -118,6 +118,13 @@ body{
 a img{
 	border: none;
 }
+#bio img {
+	margin-top: 15%;
+	width:80%;
+	-moz-box-shadow:    0px 0px 4px 2px #999;
+	-webkit-box-shadow: 0px 0px 4px 2px #999;
+	box-shadow:         0px 0px 4px 2px #999;
+}
 </style>
 
 </head>
@@ -139,7 +146,7 @@ a img{
 	    <a class="play-pause"></a>
 	</div>
 </div>
-<div id="bio" class='right'><p>I love creating characters and exploring art.</p></div>
+<div id="bio" class='right'><img src='img/profile.jpg'></img></div>
 <div id="footer">
 	<p id="copyright">&#169; Zoe Calton 2013-<date>2014</date> All Rights Reserved.<p>
 	<p>Web Design by <a href="http://canyonthings.com">CanyonThings</a><p>
@@ -165,9 +172,9 @@ $(window).on('resize',resize = function(){
 	}
 	if($(window).width()<550){
 
-		$('#bio').removeClass('right').addClass('under');
+		$('#bio').hide()
 	} else {
-		$('#bio').addClass('right').removeClass('under');
+		$('#bio').show()
 		$('#carousel-container').css({
 			maxWidth:'50%'
 		});
