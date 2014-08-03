@@ -1,0 +1,39 @@
+
+<!-- saved from url=(0028)http://localhost/platformer/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Platformer</title>
+</head><body><h1>Platformer</h1>
+<style>
+*{
+	font-family: Helvetica;
+	border:0;
+	margin:0;
+	padding:0;
+}
+.hidden {
+	display: none;
+}
+canvas, img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+#can{
+	background-color: #EEE;
+}
+</style>
+<img class="hidden" id="resource_player" src="./Platformer_files/player.png">
+<img class="hidden" id="resource_luis_idle" src="./Platformer_files/luis_idle.png">
+<img class="hidden" id="resource_luis_jump" src="./Platformer_files/luis_jump.png">
+<img class="hidden" id="resource_deer" src="./Platformer_files/deer.png">
+<img class="hidden" id="resource_flower" src="./Platformer_files/flower.png">
+
+
+<canvas id="can" width="400" height="400px"></canvas>
+
+
+<script src="./Platformer_files/underscore.js"></script>
+<script src="./Platformer_files/jquery.js"></script>
+<script src="./Platformer_files/frame.js"></script>
+<script src="./Platformer_files/app.js"></script></body></html>

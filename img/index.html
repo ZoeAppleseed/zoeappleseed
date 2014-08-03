@@ -69,12 +69,16 @@ body{
 .top-horizontal .icon{
   width:40px;
 }
+#bio{
+	font-size: 1.4em;
+}
 .right{
 	position: absolute;
 	top:5.75em;
 	right:1%;
 	width:20%;
 	color:black;
+	margin-left: 1em;
 }
 .under{
 	position: relative;
@@ -115,12 +119,11 @@ a img{
 	border: none;
 }
 #bio img {
-	margin-top: 20%;
+	margin-top: 15%;
 	width:80%;
 	-moz-box-shadow:    0px 0px 4px 2px #999;
 	-webkit-box-shadow: 0px 0px 4px 2px #999;
 	box-shadow:         0px 0px 4px 2px #999;
-	margin-left: 10%;
 }
 </style>
 
@@ -131,7 +134,6 @@ a img{
 	<a href="http://twitter.com/zoeappleseed"><img class="icon" src="img/twitter_fushia.png"></a>
 	<a href="http://zoeappleseed.tumblr.com/"><img class="icon" src="img/tumblr_fushia.png"></a>
 	<a href="mailto:zoe@zoeappleseed.com" target="_top"><img id="mail" class="icon" src="img/mail_fushia.png"/></a>
-	<a href="http://instagram.com/zoe_appleseed" target="_top"><img id="mail" class="icon" src="img/instagram_fushia.png"/></a>
 </div>
 <br>
 <div id="carousel-container">
@@ -144,11 +146,7 @@ a img{
 	    <a class="play-pause"></a>
 	</div>
 </div>
-<div id="bio" class='right'>
-	<img src='img/profile.jpg'></img>
-	<p>Artist.  I love to create characters and feelings on paper.  </p>
-	<p>Email me if you would like <a href='mailto:zoe@zoeappleseed.com?subject=Buy print'>one of my drawings</a>, <a href='mailto:zoe@zoeappleseed.com?subject=Hi There!'>to chat</a> or if you want me to <a href='mailto:zoe@zoeappleseed.com?subject=Illustration Request'>draw you something.</a></p>
-</div>
+<div id="bio" class='right'><img src='img/profile.jpg'></img></div>
 <div id="footer">
 	<p id="copyright">&#169; Zoe Calton 2013-<date>2014</date> All Rights Reserved.&nbsp;&nbsp;&nbsp;&nbsp;Web Design by <a href="http://canyonthings.com">CanyonThings</a><p>
 <div>
@@ -162,7 +160,7 @@ a img{
 <script src="js/tumblr_load.js"></script>
 <script>
 	$('date').html(new Date().getFullYear());
-</script>-
+</script>
 <script>
 
 $(window).on('resize',resize = function(){
