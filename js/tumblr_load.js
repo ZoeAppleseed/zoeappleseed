@@ -15,6 +15,12 @@ function loaded(data){
    populate(data.response)
 }
 
+function bio(data){
+	var desc = data.response.blog.description
+	var heartIndex = desc.indexOf('♥')
+	$('.bio').html(desc.slice(0,heartIndex+1))
+}
+
 $(function () {
     'use strict';
      
@@ -23,4 +29,8 @@ $(function () {
         dataType: 'jsonp'
     });
     
+    jQuery.ajax({
+    	url: 'http://api.tumblr.com/v2/blog/zoeappleseed.tumblr.com/info/?api_key=msIByDvkVk3gSr360nq2vmTkKIAvW4gNTB2dUYkvIO9NLwyxNy&jsonp=bio',
+    	dataType: 'jsonp'
+    })
 });
