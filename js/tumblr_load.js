@@ -15,12 +15,6 @@ function loaded(data){
    populate(data.response)
 }
 
-function bio(data){
-	var desc = data.response.blog.description
-	var heartIndex = desc.indexOf('♥')
-	$('.bio').html(desc.slice(0,heartIndex+1))
-}
-
 $(function () {
     'use strict';
      

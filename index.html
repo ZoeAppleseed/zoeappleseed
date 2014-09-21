@@ -17,11 +17,22 @@
 </head>
 <style>
 * {
-	font-family: Helvetica;
+	font-family: 'Roboto Slab', serif;
 }
 body{
 	background-color: #EEE; 
 	overflow: hidden;
+}
+.shadow {
+  -moz-box-shadow:    0px 0px 10px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
+  box-shadow:         0px 0px 10px 2px rgba(0,0,0,0.1);
+}
+.sidebar {
+	position: absolute;
+	width: 15%;
+	height: 90%;
+	overflow-y:scroll;
 }
 .sidebar img{
   position: relative;
@@ -31,17 +42,6 @@ body{
   border-radius: 5%;
   margin-bottom: 1em; 
   margin-bottom: 1em; 
-
-  -moz-box-shadow:    0px 0px 10px 2px rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
-  box-shadow:         0px 0px 10px 2px rgba(0,0,0,0.1);
-}
-.sidebar {
-	position: absolute;
-	left:2em;
-	width: 15%;
-	height: 90%;
-	overflow-y:scroll;
 }
 ::-webkit-scrollbar { 
     display: none; 
@@ -56,6 +56,12 @@ body{
 	font-size: 3em;
 	margin: 0;
 	font-family: 'Roboto Slab', serif;
+}
+.desc {
+	width: 100%;
+	position: absolute;
+	top:4em;
+	text-align: center;
 }
 .content {
 	top:7em;
@@ -82,15 +88,16 @@ body{
 	position: relative;
 	top: -0.3em;
 }
-.profile {
-	width: 85%;
-	box-shadow: 0px 0px 4px 2px #999;
-	margin-bottom: 1em;
-}
 .icons #instagram {
 	position: relative;
 	top: -0.2em;
 	left: 0.2em;
+}
+.content .copyright {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top:77%;
 }
 .content .preview {
 	position: absolute;
@@ -102,28 +109,36 @@ body{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	height: 100%;
-	-moz-box-shadow:    0px 0px 10px 2px rgba(0,0,0,0.1);
-	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.1);
-	box-shadow:         0px 0px 10px 2px rgba(0,0,0,0.1);
+	max-height: 100%;
+	max-width: 100%;
+}
+.links {
+	position: absolute;
+	top: 0;
+	right:0;
+	width:15%;
+	text-align: left;
+	font-size: 1.5em;
+}
+a:visited {
+	color: black;
 }
 </style>
 
 </head>
 <body>
 	<h1 class='header'>Zoe Appleseed</h1>
+	<p class='desc'>Artist and Designer</p>
 	<div class="content">
 		<div class="sidebar"></div>
 		<div class='preview'></div>
-		<div class="right_bar">
-			<img class='profile' src="img/profile.jpg">
-			<div class='bio'></div>
-			<div class="icons">
-				<a href="http://twitter.com/zoeappleseed"><img class="icon" src="img/twitter_fushia.png"></a>
-				<a href="http://zoeappleseed.tumblr.com/"><img class="icon" src="img/tumblr_fushia.png"></a>
-				<a href="mailto:zoe@zoeappleseed.com" target="_top"><img id="mail" class="icon" src="img/mail_fushia.png"></a>
-				<a href="http://instagram.com/zoe_appleseed" target="_top"><img id="instagram" class="icon" src="img/instagram_fushia.png"></a>
-			</div>		
+		<div class='copyright'>Copyright Zoe Calton 2014</div>
+		<div class='links'>
+			<p>Contact me for prints or commisions<p><p>or just to say "Hey!" :)<p>
+			<p><a href=''>Instagram</a></p>
+			<p><a href=''>Twitter</a></p>
+			<p><a href=''>Tumblr</a></p>
+			<p><a href=''>Mail</a></p>
 		</div>
 	</div>
 	<script type="text/javascript" src="http://zoeappleseed.tumblr.com/api/read/json?tagged=seed"></script>
@@ -143,10 +158,11 @@ body{
 		})
 
 		var links = _(thumbs).map(function(thumb){
-			return $('<img src="'+thumb.original+'">')
+			return $('<img src="'+thumb.original+'" class="shadow">')
 		})
-		$('.sidebar').append(_.shuffle(links))
-		$('.preview').append(_.shuffle(links)[0])
+		var shuffled =_.shuffle(links);
+		$('.sidebar').append(shuffled)
+		$('.preview').append(shuffled[0])
 
 		$('.sidebar img').click(function(){
 			$('.preview img').attr('src',$(this).attr('src'))
