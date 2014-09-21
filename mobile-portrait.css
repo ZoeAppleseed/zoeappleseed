@@ -74,6 +74,7 @@ body {
 .links p{
 	margin: 0.2em;
 }
+a { color: black; }
 a:visited{
 	color: black;	
 }

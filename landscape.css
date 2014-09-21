@@ -14,7 +14,7 @@ body{
 }
 .sidebar {
 	position: absolute;
-	width: 15%;
+	width: 10%;
 	height: 90%;
 	overflow-y:scroll;
 	left:2%;
@@ -57,13 +57,13 @@ body{
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	top:77%;
+	bottom:0;
 }
 .content .preview {
 	position: absolute;
-	left: 20%;
-	width: 60%;
-	height: 75%;
+	left: 25%;
+	width: 50%;
+	height: 90%;
 }
 .content .preview img{
 	display: block;
@@ -75,11 +75,13 @@ body{
 .links {
 	position: absolute;
 	top: 0;
-	right:0; 
+	right:2%; 
 	width:20%;
+	padding: 1%;
 	text-align: left;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
+a { color: black;}
 a:visited {
 	color: black;
 }
