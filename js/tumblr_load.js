@@ -12,15 +12,9 @@
 /* global, blueimp, $, tumblr_api_read */
 var i = 0;
 function loaded(data){
-   window.posts = window.posts || []
-   var seeds = _.filter(data.response.posts,function(post){
-      return _.contains(post.tags,'seed') 
+   $.get('https://api.github.com/repos/JAForbes/zoeappleseed/contents/files.json',function(response){
+      console.log(atob(response.content))
     })
-   window.posts.push.apply(window.posts,seeds)
-   i++;
-   if(i>6){ populate() }
-   
-
 }
 
 $(function () {

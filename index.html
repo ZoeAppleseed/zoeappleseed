@@ -40,18 +40,13 @@
 	<script src="js/underscore-min.js"></script>
 	<script>
 
-	function populate(){
+	$.get('https://api.github.com/repos/JAForbes/zoeappleseed/contents/files.json',populate)
+	function populate(response){
+		var posts = JSON.parse(atob(response.content));
 
-		var thumbs = _(posts).map(function(post){
-		  var photo = post.photos[0];
-		  return {
-		    thumb: photo.alt_sizes[3].url,
-		    original: photo.original_size.url
-		  }
-		})
 
-		var links = _(thumbs).map(function(thumb){
-			return $('<img src="'+thumb.original+'" class="shadow">')
+		var links = _(posts).map(function(url){
+			return $('<img src="'+url+'" class="shadow">')
 		})
 		var shuffled =_.shuffle(links);
 		$('.sidebar').append(shuffled)
