@@ -57,7 +57,10 @@
 		$('.preview').append(shuffled[0])
 
 		$('.sidebar img').click(function(){
-			$('.preview img').attr('src',$(this).attr('src'))
+			var $sidebar = $(this)
+			$('.preview img').fadeOut(function(){
+				$(this).attr('src',$sidebar.attr('src')).fadeIn()
+			})
 		})
 	}
 
