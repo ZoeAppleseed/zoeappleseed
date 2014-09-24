@@ -42,16 +42,17 @@
 	<script>
 
 	$.get('https://api.github.com/repos/JAForbes/zoeappleseed/contents/files.json',populate)
-function populate(response){
+	function populate(response){
 		var posts = JSON.parse(Base64.decode(response.content));
 
 
-		var links = _(posts).map(function(url){
-			return $('<img src="'+url+'" class="shadow">')
+		var links = _(posts).map(function(url,caption){
+			return $('<img src="'+url+'" class="shadow" alt="'+$(caption).text()+'">')
 		})
 		var shuffled =_.shuffle(links);
 		$('.sidebar').append(shuffled)
-		$('.preview').append(shuffled[0])
+		var $previewImg = $(shuffled[0].clone())
+		$('.preview').append($previewImg);
 
 		$('.sidebar img').click(function(){
 			var $sidebar = $(this)
