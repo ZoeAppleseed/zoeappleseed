@@ -27,7 +27,7 @@
 		<div class='preview'></div>
 		<div class='copyright'>Copyright Zoe Calton 2014</div>
 		<div class='links'>
-			<p class='bio'>Contact me for prints or commisions or just to say "Hey!" :)</p>
+			<p class='bio'></p>
 			<p><a href='http://instagram.com/zoe_appleseed'>Instagram</a></p>
 			<p><a href='http://twitter.com/zoeappleseed'>Twitter</a></p>
 			<p><a href='http://zoeappleseed.tumblr.com/'>Tumblr</a></p>
@@ -61,6 +61,10 @@
 			})
 		})
 	}
+	$.get('https://api.github.com/repos/JAForbes/zoeappleseed/contents/bio.json',function(response){
+		var bio =JSON.parse(Base64.decode(response.content)).bio;
+		$('.bio').text(bio);
+	})
 
 
 
