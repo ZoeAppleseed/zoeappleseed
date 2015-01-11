@@ -41,7 +41,7 @@
 	<script src="Base64.js"></script>
 	<script>
 
-	$.get('https://api.github.com/repos/JAForbes/zoeappleseed/contents/files.json',populate)
+	$.get('https://api.github.com/repos/zoeappleseed/zoeappleseed.github.io/contents/files.json',populate)
 	function populate(response){
 		var posts = JSON.parse(Base64.decode(response.content));
 
@@ -61,7 +61,7 @@
 			})
 		})
 	}
-	$.get('https://api.github.com/repos/JAForbes/zoeappleseed/contents/bio.json',function(response){
+	$.get('https://api.github.com/repos/zoeappleseed/zoeappleseed.github.io/contents/bio.json',function(response){
 		var bio =JSON.parse(Base64.decode(response.content)).bio;
 		$('.bio').text(bio);
 	})
