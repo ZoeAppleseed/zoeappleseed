@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <meta name="msapplication-tap-highlight" content="no"> <!-- Disable highlighting when tapping -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="msapplication-tap-highlight" content="no"> <!-- Disable highlighting when tapping -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
 	
@@ -32,8 +32,12 @@
 			<p><a href='http://twitter.com/zoeappleseed'>Twitter</a></p>
 			<p><a href='http://zoeappleseed.tumblr.com/'>Tumblr</a></p>
 			<p><a href='mailto:zoe@zoeappleseed.com'>Mail</a></p>
-
+			<div class='mini shadow'>
+				<a href="https://www.etsy.com/au/shop/ZoeAppleseed?ref=em"><p>Visit the shop!</p></a>
+				<script type='text/javascript' src='https://www.etsy.com/assets/js/etsy_mini_shop.js'></script><script type='text/javascript'>new Etsy.Mini(10525654,'thumbnail',2,2,1,'https://www.etsy.com');</script>
+			</div>
 		</div>
+		
 	</div>
 	<script type="text/javascript" src="http://zoeappleseed.tumblr.com/api/read/json?tagged=seed"></script>
 	<script src="jquery.js"></script>
@@ -65,7 +69,7 @@
 		var bio =JSON.parse(Base64.decode(response.content)).bio;
 		$('.bio').text(bio);
 	})
-        console.log("Hosted at zoeappleseed/zoeappleseed.github.io")
+				console.log("Hosted at zoeappleseed/zoeappleseed.github.io")
 
 
 	</script>
