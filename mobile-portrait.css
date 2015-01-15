@@ -52,7 +52,8 @@ body {
 	height:20%;
 	white-space:nowrap;
 	overflow-x: scroll;
-		overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: hidden;
 }
 .sidebar img {
 	height:90%;

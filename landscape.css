@@ -17,6 +17,7 @@ body{
 	width: 10%;
 	height: 90%;
 	overflow-y:scroll;
+	-webkit-overflow-scrolling: touch;
 	left:2%;
 }
 .sidebar img{
