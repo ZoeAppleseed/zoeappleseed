@@ -2,78 +2,8 @@
 <html lang="en">
 <head>
 	<meta http-equiv="refresh" content="0; url=http://www.zoeappleseed.com/" /> <!-- Remove this when domain propagates -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv="x-ua-compatible" content="IE=edge">
-	<meta name="msapplication-tap-highlight" content="no"> <!-- Disable highlighting when tapping -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-	
-	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-	<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:100" rel="stylesheet" type="text/css">
 	<title>Zoe Appleseed</title>
 </head>
-<link rel='stylesheet' media='screen and (max-width: 400px)' href='mobile-portrait.css' />
-<link rel='stylesheet' media='screen and (min-width: 401px)' href='landscape.css' />
-
-</head>
 <body>
-	<h1 class='header'>Zoe Appleseed</h1>
-	<p class='desc'>Artist and Designer</p>
-	<div class="content">
-		<div class="sidebar"></div>
-		<div class='preview'></div>
-		<div class='copyright'>Copyright Zoe Calton 2015</div>
-		<div class='links'>
-			<p class='bio'></p>
-			<p><a href='http://instagram.com/zoe_appleseed'>Instagram</a></p>
-			<p><a href='http://twitter.com/zoeappleseed'>Twitter</a></p>
-			<p><a href='http://zoeappleseed.tumblr.com/'>Tumblr</a></p>
-			<p><a href='mailto:zoe.calton@gmail.com'>Mail</a></p>
-			<div class='mini shadow'>
-				<a href="https://www.etsy.com/au/shop/ZoeAppleseed?ref=em"><p>Visit my shop!</p></a>
-				<script type='text/javascript' src='https://www.etsy.com/assets/js/etsy_mini_shop.js'></script>
-				<script type='text/javascript'>new Etsy.Mini(10525654,'thumbnail',2,2,1,'https://www.etsy.com');</script>
-			</div>
-		</div>
-		
-	</div>
-	<script type="text/javascript" src="http://zoeappleseed.tumblr.com/api/read/json?tagged=seed"></script>
-	<script src="jquery.js"></script>
-	<script src="js/underscore-min.js"></script>
-	<script src="Base64.js"></script>
-	<script>
-
-	$.get('https://api.github.com/repos/zoeappleseed/zoeappleseed.github.io/contents/files.json',populate)
-	function populate(response){
-		var posts = JSON.parse(Base64.decode(response.content));
-
-
-		var links = _(posts).map(function(url,caption){
-			return $('<img src="'+url+'" class="shadow" alt="'+$(caption).text()+'">')
-		})
-		var shuffled =_.shuffle(links);
-		$('.sidebar').append(shuffled)
-		var $previewImg = $(shuffled[0].clone())
-		$('.preview').append($previewImg);
-
-		$('.sidebar img').click(function(){
-			var $sidebar = $(this)
-			$('.preview img').fadeOut(function(){
-				$(this).attr('src',$sidebar.attr('src')).fadeIn()
-			})
-		})
-	}
-	$.get('https://api.github.com/repos/zoeappleseed/zoeappleseed.github.io/contents/bio.json',function(response){
-		var bio =JSON.parse(Base64.decode(response.content)).bio;
-		$('.bio').text(bio);
-	})
-				console.log("Hosted at zoeappleseed/zoeappleseed.github.io")
-
-
-	</script>
 </body> 
 </html>
